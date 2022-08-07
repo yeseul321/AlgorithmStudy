@@ -10,9 +10,9 @@ int main(){
 	string buf[1000];
 	cin >> str;
 	for(int i = 0; i < str.size(); i++){
-		buf[i] = str.substr(i, str.size()); //문자열의 i~l까지를 temp[i]에 복사 
+		buf[i] = str.substr(i, str.size());
 	}
-	sort(buf, buf + str.size()); //오름차순 
+	sort(buf, buf + str.size());
 	for(int i = 0; i < str.size(); i++){
 		cout << buf[i] << '\n';
 	}
