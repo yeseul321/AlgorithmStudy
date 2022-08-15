@@ -14,12 +14,13 @@ queue<pair<int, int>> q;
 
 void dfs(int y, int x) {
     for (int i = 0; i < 8; i++) {
-        int nextX = x + di[i];
-        int nextY = y + dj[i];
-        if (nextX < 0 || nextY < 0 || nextX >= n || nextY >= m)continue; //범위를 벗어나면 무시
-        if (!visit[nextY][nextX] && g[nextY][nextX]) { //이동할 좌표가 방문하지 않은 땅이면 재귀호출
-            visit[nextY][nextX] = 1;
-            dfs(nextY, nextX);
+        int ni = x + di[i];
+        int nj = y + dj[i];
+        if (ni >= 0 && nj >= 0 && ni < n && nj < m) {
+            if (!visit[nj][ni] && g[nj][ni]) {
+                visit[nj][ni] = 1;
+                dfs(nj, ni);
+            }
         }
     }
 }
