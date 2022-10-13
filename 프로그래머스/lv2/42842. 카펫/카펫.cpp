@@ -4,21 +4,16 @@
 using namespace std;
 
 vector<int> solution(int brown, int yellow) {
-    vector<int> answer;
-    int i = 1, j = yellow;
-    while(i <= yellow){
-        if((i * 2 + 4 + j * 2) == brown){
-            answer.push_back(j + 2);
-            answer.push_back(i + 2);
-            break;
-        }
-        else{
-            i++;
-            while(yellow % i != 0){
-                i++;
-            }
-            j = yellow / i;
-        }
+
+    int w = brown / 2 - 1;
+    int h = 3;
+
+    while(w >= h){
+        if(w * h == (brown + yellow)) break;
+
+        w--;
+        h++;
     }
-    return answer;
+
+    return vector<int>{w, h};
 }
