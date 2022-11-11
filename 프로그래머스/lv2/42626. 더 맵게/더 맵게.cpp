@@ -16,15 +16,19 @@ int solution(vector<int> scoville, int K) {
 
     while(1){
         if(pq.size() < 2) break;
+        
         int least1 = pq.top();
         pq.pop();
+        
         if(least1 >= K) break;
+        
         int least2 = pq.top();
         pq.pop();
 
         sum=calc(least1,least2);
-        answer++;
         pq.push(sum);
+        
+        answer++;
     }
     if (sum < K) answer = -1 ; 
     return answer;
