@@ -4,7 +4,7 @@
 using namespace std;
 
 vector<int> solution(vector<string> wallpaper) {
-    vector<int> answer{100,100,-100,-100};
+    vector<int> answer {999,999,-999,-999};
 
     const int n = wallpaper.size();
     const int m = wallpaper[0].size();
